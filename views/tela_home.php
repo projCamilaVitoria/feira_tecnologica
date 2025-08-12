@@ -12,10 +12,12 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/home.css">
-      <script type="text/javascript" src="https://cdn.rybena.com.br/dom/master/latest/rybena.js"></script>
+    <script type="text/javascript" src="https://cdn.rybena.com.br/dom/master/latest/rybena.js"></script>
     <title>Feira - Inicio</title>
-  </head>
-  <body class="TelaInicio">
+
+
+</head>
+<body class="TelaInicio">
     <header>
       <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
@@ -30,21 +32,16 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
     </header>
     <main>
-      <div>
-        <div class="a0">
-            <?php if (isset($_SESSION['nome'])) {
-              echo "Seja bem-vindo(a) " . $_SESSION['nome'] . "!";
-            } ?>
-            <a href="tela_mapa.php">Mapa</a>
-            <a href="tela_projetos.php">Projetos</a>
-            <a href="tela_ods.php">ODS</a>
-            <a href="tela_creditos.php">Créditos</a>
-            <button class="btn-voltar" onclick="history.back()">Voltar</button>
-          </div>
-        </div>
-        <div class="rateOrg">
-          <a href="tela_feedback.php">Avalie-nos</a>
-        </div>
+      <div class="a0">
+        <?php if (isset($_SESSION['nome'])) {
+          echo "Seja bem-vindo(a) " . $_SESSION['nome'] . "!";
+        } ?>
+        <a href="tela_mapa.php">Mapa</a>
+        <a href="tela_projetos.php">Projetos</a>
+        <a href="tela_ods.php">ODS</a>
+        <a href="tela_creditos.php">Créditos</a>
+        <a href="tela_feedback.php">Avalie-nos</a>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
       </div>
     </main>
     <div id="mySideMenu" class="side-menu">
@@ -59,12 +56,10 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php endif; ?>
     </div>
     <script>
-      document
-        .getElementById("mobile-menu")
-        .addEventListener("click", function () {
-          this.classList.toggle("active");
-          openMenu();
-        });
+      document.getElementById("mobile-menu").addEventListener("click", function () {
+        this.classList.toggle("active");
+        openMenu();
+      });
 
       function openMenu() {
         document.getElementById("mySideMenu").style.width = "250px";
@@ -75,5 +70,5 @@ if (session_status() === PHP_SESSION_NONE) {
         document.getElementById("mobile-menu").classList.remove("active");
       }
     </script>
-  </body>
+</body>
 </html>
